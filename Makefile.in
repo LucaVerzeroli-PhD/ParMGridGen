@@ -1,0 +1,63 @@
+#--------------------------------------------------------------------------
+# Which make to use 
+make = make
+
+# Which compiler to use
+#  CC is the compiler for the serial code
+#  PARCC is the compiter for the parallel code
+CC = mpicc 
+PARCC = mpicc
+
+# What optimization level to use
+OPTFLAGS = -O2
+
+# What options to be used by the compiler
+COPTIONS = 
+
+# Which loader to use
+LD = ld 
+PARLD = ld 
+
+# What options to be used by the loader
+LDOPTIONS = -O2
+
+# Where to put the executable 
+BINDIR = ../../MGridGen
+
+# Additional libraries
+DMALLOCDIR = /usr/local
+IMLIBDIR = ../../MGridGen/IMlib
+
+# Include directories for the compiler
+INCDIR = #../../MGridGen/Lib/ 
+
+# In which directories to look for any additional libraries
+LIBDIR = -L../../MGridGen/IMlib/ -L../../ -L../../MGridGen/Programs
+
+# Set some flags
+DEBUGFLAGS =
+
+# What additional libraries to link the programs with (eg., -lmpi)
+LIBS = -lmgrid -lm
+PARLIBS = -lparmgrid -lmgrid -lmpi -lm
+
+
+# What archiving to use
+AR = ar rv
+
+# What to use for indexing the archive
+#RANLIB = ranlib
+RANLIB = ar -ts
+
+#--------------------------------------------------------------------------
+# 
+# Do not change any of the following
+#
+VERNUM = 1.0
+
+#*************************************************************************
+# Compilation flags
+#*************************************************************************
+ddmalloc = no
+dmalloc = no
+debug = no 
